@@ -51,7 +51,7 @@ private:
     };
 
     std::list<Segment> m_segments;
-    Segment& segment;
+    Segments& segment_;
     Direction m_currentDirection;
 
     void handleTimeoutInd();
@@ -60,7 +60,7 @@ private:
     void handleFoodResp(std::unique_ptr<Event>);
     void handlePauseInd(std::unique_ptr<Event>);
 
-    bool isSegmentAtPosition(int x, int y) const;
+    //bool isSegmentAtPosition(int x, int y) const;
     Segment calculateNewHead() const;
     void updateSegmentsIfSuccessfullMove(Segment const& newHead);
     void addHeadSegment(Segment const& newHead);

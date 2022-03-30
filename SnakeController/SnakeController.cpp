@@ -56,12 +56,11 @@ Controller::Controller(IPort& p_displayPort, IPort& p_foodPort, IPort& p_scorePo
         istr >> length;
 
         while (length--) {
+            Segments segment_(istr);
+
             Segment seg;
-            
-            istr >> seg.x >> seg.y; 
+            istr >> seg.x >> seg.y;
             m_segments.push_back(seg);
-            //Segments seg(istr);
-            //segment_.pushB(seg);
         }
     } else {
         throw ConfigurationError();
